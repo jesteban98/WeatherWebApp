@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Veridical 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20131203
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Weather App</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+
+<!--Script to call the Javascript maps API with my key, maybe I will need to use the alternative solution if I have problems with the HTTPS-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJOz5IcZuTehBzlMGGMl--MuyuF6AgapU&callback=initMap"></script> 
+<script type="text/javascript" src="mapa.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="tabla.js"></script>
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><a href="#map" accesskey="1" >Weather map</a></li>
+				<li><a href="#featured" accesskey="2" >Search your city</a></li>
+				<li><a href="#wrapper1" accesskey="3" ><span class="icon icon-info-sign" onclick="loadInfo('info.html')"></span></a></li>
+			</ul>
+		</div>
+		<div id="logo">
+			<h1><a href="#">Weather App</a></h1>
+		</div>
+	</div>
+</div>
+	<div id="map" class="container">   
+	</div>
+</div>
+<div id="wrapper3">
+		<div id="graficas" class="container">
+	</div>
+</div>
+<div id="wrapper2">
+	<div id="featured" class="container">
+		<div class="box1">
+			<h2><span class="icon icon-star"></span>Name of your city:</h2>
+			<form>
+				<input type="text" placeholder="City" id="City" required/>
+				<input type="text" placeholder="Country Code" id="CountryID"/>
+				<input type="button" value="Submit" onclick="get53Weather(document.getElementById('City').value,document.getElementById('CountryID').value)"/>
+			</form>
+			<br>
+			<h2><span class="icon icon-umbrella"></span>Choose temperature units:</h2>
+			<input type="button" value="Celsius" onclick="changeUnits('metric')"/>
+			<input type="button" value="Kelvin" onclick="changeUnits('standard')"/>
+			<input type="button" value="Fahrenheit" onclick="changeUnits('imperial')"/>
+
+
+		</div>
+		<div class="box2">
+			<h2><span class="icon icon-cloud"></span>Graphics of your city:</h2>
+			<div id="espacio"></div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div id="wrapper1">
+</div>
+<div id="copyright">
+	<p><a href="https://openweathermap.org/">OpenWeather</a> | <a href="https://www.influxdata.com/">InfluxDB</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+</body>
+</html>
